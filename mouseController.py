@@ -16,13 +16,13 @@ def check_package():
 	import pyautogui as mouse
 	return()
 
-def mouse_movement():
+def mouse_movement(sec):
 	while True:
 		size = mouse.size()
 		mouse.moveTo(size.width/4, size.width/4, duration=1)
-		time.sleep(10)
+		time.sleep(sec)
 		mouse.moveTo(size.width/2, size.width/2, duration=1)
-		time.sleep(10)
+		time.sleep(sec)
 	
 
 
@@ -33,4 +33,4 @@ if __name__ == "__main__":
 
 	check_package()
 	import pyautogui as mouse
-	mouse_movement()
+	mouse_movement(60)
