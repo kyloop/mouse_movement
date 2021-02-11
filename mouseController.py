@@ -1,4 +1,4 @@
-import subprocess, sys, time
+import subprocess, sys, time, os
 
 def check_package():
 	reqs = subprocess.check_output([sys.executable, '-m', 'pip','freeze'])
@@ -10,10 +10,13 @@ def check_package():
 			print("Package: ",package, "is found")
 			print("Done Checking Package !!!")
 			import pyautogui as mouse
-			return()
+			#return()
 		
+
+	os.system('curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py')
+	subprocess.check_call([sys.executable, '-m', 'pip', 'install','--upgrade','pip'])		
 	subprocess.check_call([sys.executable, '-m', 'pip', 'install','pyautogui'])
-	import pyautogui as mouse
+	#import pyautogui as mouse
 	return()
 
 def mouse_movement(sec):
